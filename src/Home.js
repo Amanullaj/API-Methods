@@ -34,10 +34,20 @@ const Home = () => {
         setShowModal(true)
         setSelectedUser(data)
     }
+    const searchUser = async (text) => {
+        const url = `http://10.0.2.2:3000/data?q=${text}`;
+        let result = await fetch(url);
+        result = await result.json();
+        if (result) {
+            setUser(result)
+        }
+    }
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
-            <StatusBar barStyle={'dark-content'} />
+            <StatusBar barStyle={'dark-content'} backgroundColor={'white'}/>
             <Text style={{ fontSize: 30, color: 'orange', textAlign: 'center', fontWeight: 'bold' }}>Employees List</Text>
+            <TextInput placeholder='Search Here' onChangeText={(text)=>searchUser(text)} 
+            style={{borderColor:'#9999ff',borderWidth:1,margin:20,borderRadius:20}}/>
             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
                 <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', }}>
