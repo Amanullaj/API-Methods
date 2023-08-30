@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Home from './Home';
 import Employee from './Employee';
 import Contact from './Contact'
-import List from './List';
+
 
 const Stack = createNativeStackNavigator();
 const Navigation = () => {
@@ -15,7 +15,7 @@ const Navigation = () => {
         <Stack.Screen name='Home' component={Home} options={{headerShown:false}}/>
         <Stack.Screen name='Employee' component={Employee} options={{headerShown:false}}/>
         <Stack.Screen name='Contact' component={Contact} options={{headerShown: false}}/>
-        <Stack.Screen name='List' component={List} options={{headerShown:false}}/>
+        
     </Stack.Navigator>
    </NavigationContainer>
   )

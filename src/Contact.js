@@ -18,6 +18,7 @@ const Contact = ({navigation}) => {
         {method:'POST',headers:{"content-Type":"application/json"},
       body:JSON.stringify({employee_name,employee_salary, employee_age})})
         result = await result.json();
+        getData();
       }
        
     
